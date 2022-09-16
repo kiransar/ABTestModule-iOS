@@ -18,7 +18,7 @@ class DeepLinkingCompliance:
     # This function will find new swift files on project by using git diff command. Basically it will differentiate files with UMA-Origin and store list of files in temporary file.
     def getAddedSwiftFilesOnProject(self):
         self.create_file = subprocess.run(["touch", self.temporaryFileStorePath])
-        self.git_branch_added_file_list = subprocess.run(["git", "diff", "--name-only", "--diff-filter=cdmrtuxb", "origin/main"], input=self.create_file.stdout, capture_output=True)
+        self.git_branch_added_file_list = subprocess.run(["git", "diff", "--name-only", "--diff-filter=cdmrtuxb", "main"], input=self.create_file.stdout, capture_output=True)
         self.filter_swift_files_only = subprocess.run(["grep", ".*\\.swift$"], input=self.git_branch_added_file_list.stdout, capture_output=True)
         self.store_output_in_file = subprocess.run(["tee", self.temporaryFileStorePath], input=self.filter_swift_files_only.stdout, capture_output=True)
     
@@ -59,7 +59,7 @@ class DeepLinkingCompliance:
 
     # Check configuration on plist file with that class name. that exists or not.
     def checkInfoPlistForClassMapping(self):
-        DeepLinkingPushsectionMappingPlist = open("UMA/UMA_Main/MasterRouter/DeepLinkingPushsectionMapping.plist", 'r')
+        DeepLinkingPushsectionMappingPlist = open("MasterRouter/DeepLinkingPushsectionMapping.plist", 'r')
         deeplinkPlist = DeepLinkingPushsectionMappingPlist.read()
         DeepLinkingPushsectionMappingPlist.close()
         for viewcontroller in self.compliantViewControllerNames:

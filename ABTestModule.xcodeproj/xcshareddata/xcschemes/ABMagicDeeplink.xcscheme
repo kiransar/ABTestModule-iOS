@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0A30487A28C25830006354E5"
-               BuildableName = "ABMagicDeeplink.framework"
+               BuildableName = "ABTestModule.framework"
                BlueprintName = "ABTestModule"
                ReferencedContainer = "container:ABTestModule.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0A30488428C25830006354E5"
-               BuildableName = "ABMagicDeeplinkTests.xctest"
+               BuildableName = "ABTestModuleTests.xctest"
                BlueprintName = "ABTestModuleTests"
                ReferencedContainer = "container:ABTestModule.xcodeproj">
             </BuildableReference>
@@ -61,7 +61,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0A30487A28C25830006354E5"
-            BuildableName = "ABMagicDeeplink.framework"
+            BuildableName = "ABTestModule.framework"
             BlueprintName = "ABTestModule"
             ReferencedContainer = "container:ABTestModule.xcodeproj">
          </BuildableReference>
