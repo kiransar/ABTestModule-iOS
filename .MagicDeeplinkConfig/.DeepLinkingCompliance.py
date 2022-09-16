@@ -7,6 +7,8 @@ import pathlib
 
 class DeepLinkingCompliance:
     def __init__(self):
+        print("Deeplink Check In Progress")
+
         self.temporaryFileStorePath = ".MagicDeeplinkConfig/AddedNewSwiftFilesList.txt"
         self.compliantViewControllerNames = []
         

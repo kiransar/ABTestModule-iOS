@@ -1,5 +1,5 @@
 Pod::Spec.new do |spec|
-  spec.name         = 'ABTestModuleTests'
+  spec.name         = 'ABTestModule'
   spec.version      = '1.0.0'
   spec.license      = { :type => 'Apache License, Version 2.0', :text => <<-LICENSE
     Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,12 +15,17 @@ Pod::Spec.new do |spec|
     limitations under the License.
     LICENSE
   }
-  spec.homepage     = 'https://github.com/kiransar/ABTestModuleTests-iOS.git'
+  spec.homepage     = 'https://github.com/kiransar/ABTestModule-iOS.git'
   spec.authors      = { 'Kirankumar Sarvaiya' => 'ksarv05@safeway.com' }
   spec.summary      = 'A CocoaPods library written in Swift to implement magic deeplink.'
-  spec.source       = { :git => 'https://github.com/kiransar/ABTestModuleTests-iOS.git', :tag => "#{spec.version}" }
-  spec.source_files = 'ABTestModuleTests/Classes/*'
+  spec.source       = { :git => 'https://github.com/kiransar/ABTestModule-iOS.git', :tag => "#{spec.version}" }
+  spec.source_files = 'ABTestModule/Classes/*'
   spec.swift_version = "5.3"
   spec.ios.deployment_target = "9.0"
   spec.static_framework = true
+  spec.script_phase = {
+    :name => 'Check Deeplinking Routing Configuration',
+    :script => 'Python3 "$PROJECT_DIR/.MagicDeeplinkConfig/.DeepLinkingCompliance.py"',
+    :execution_position => :before_compile
+  }
 end
